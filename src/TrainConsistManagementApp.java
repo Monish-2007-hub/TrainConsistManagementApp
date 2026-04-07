@@ -2,6 +2,7 @@ import java.util.*;
 
 public class TrainConsistManagementApp {
 
+    // 🔹 Inner Bogie Class
     static class Bogie {
         String name;
         int capacity;
@@ -18,6 +19,7 @@ public class TrainConsistManagementApp {
         System.out.println("UC7 - Sort Bogies by Capacity (Comparator)");
         System.out.println("======================================\n");
 
+        // Create list
         List<Bogie> bogies = new ArrayList<>();
 
         bogies.add(new Bogie("Sleeper", 72));
@@ -25,13 +27,16 @@ public class TrainConsistManagementApp {
         bogies.add(new Bogie("First Class", 24));
         bogies.add(new Bogie("General", 90));
 
+        // Before Sorting
         System.out.println("Before Sorting:");
         for (Bogie b : bogies) {
             System.out.println(b.name + " -> " + b.capacity);
         }
 
-        Collections.sort(bogies, (b1, b2) -> b1.capacity - b2.capacity);
+        // 🔁 Sorting using Comparator
+        bogies.sort((b1, b2) -> b1.capacity - b2.capacity);
 
+        // After Sorting
         System.out.println("\nAfter Sorting by Capacity:");
         for (Bogie b : bogies) {
             System.out.println(b.name + " -> " + b.capacity);
